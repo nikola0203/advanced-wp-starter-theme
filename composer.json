@@ -1,0 +1,20 @@
+{
+    "name": "nikola0203/advanced-wp-starter-theme",
+    "description": "WordPress modern starter theme",
+    "type": "wordpress-theme",
+    "license": "GPL-3.0",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Nikola Milosevic",
+            "email": "nikolahissar@gmail.com" 
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.2"
+    },
+    "autoload": {
+		"psr-4": { "Awpt\\": "./app" },
+		"files": [ "./app/Helpers.php" ]
+	}
+}
