@@ -64,6 +64,8 @@ assets/bower_components/*
 node_modules
 package-lock.json
 yarn.lock
+.pnp.cjs
+.pnp.loader.mjs
 
 # Compiled Files and Build Dirs #
 ##########

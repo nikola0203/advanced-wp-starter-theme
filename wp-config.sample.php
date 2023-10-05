@@ -73,6 +73,7 @@ define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
 define( 'LOGGED_IN_SALT', 'put your unique phrase here' );
 define( 'NONCE_SALT', 'put your unique phrase here' );
 
+define( 'WP_ENVIRONMENT_TYPE', $_ENV['WP_ENVIRONMENT_TYPE'] );
 /**#@-*/
 /**
  * WordPress Database Table prefix.
@@ -82,7 +83,7 @@ define( 'NONCE_SALT', 'put your unique phrase here' );
  */
 $table_prefix = $_ENV['DB_PREFIX'];
 
-/*
+/**
  * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.

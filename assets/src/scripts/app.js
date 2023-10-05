@@ -3,11 +3,11 @@
  */
 
 // Import libraries
-import 'swiper';
+// import 'swiper';
 
 // Import custom modules
 import App from './modules/app.js';
-import Slider from './modules/slider.js';
+// import Slider from './modules/slider.js';
 
 const app = new App();
-const slider = new Slider();
+// const slider = new Slider();
