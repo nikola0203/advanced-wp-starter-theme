@@ -1,6 +1,6 @@
 <?php
 
-namespace Awpt\core;
+namespace Awpt\Core;
 
 /**
  * Sidebar.

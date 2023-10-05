@@ -1,6 +1,6 @@
 <?php
 
-namespace Awpt\Custom;
+namespace Awpt\Core;
 
 /**
  * Use it to write your custom functions.

@@ -18,16 +18,23 @@ final class Init
 	public static function get_services()
 	{
 		return [
+			Plugins\RequiredPlugins::class,
 			Core\Tags::class,
 			Core\Sidebar::class,
+			Core\Widgets\TextWidget::class,
+			Core\Blocks::class,
+			Core\Comments::class,
+			Core\OptionsPages::class, 
+			Core\Shortcodes::class,
+			// Core\PostTypes::class,
 			Setup\Setup::class,
 			Setup\Menus::class,
 			Setup\Enqueue::class,
-			Custom\PostTypes::class,
-			// Custom\Custom::class,
-			Api\Customizer::class,
-			Api\Widgets\TextWidget::class,
-			Plugins\Acf::class
+			Ajax\AjaxMethods::class,
+			Custom\Filters::class,
+			Custom\Custom::class,
+			Plugins\Acf::class,
+			Plugins\AcfBlocks::class,
 		]; 
 	}
 

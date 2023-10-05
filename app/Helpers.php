@@ -6,6 +6,19 @@
  * @package awpt
  */
 
+if ( ! function_exists( 'print_var' ) ) {
+	/**
+	 * Var_dump and die method
+	 *
+	 * @return void
+	 */
+	function print_var($x) {
+		echo '<pre>';
+		print_r($x);
+		echo '</pre>';
+	}
+}
+
 if ( ! function_exists( 'dd' ) ) {
 	/**
 	 * Var_dump and die method
@@ -83,5 +96,50 @@ if ( ! function_exists( 'mix' ) ) {
 		$path = $manifestDirectory . $manifest[$path];
 
 		return get_template_directory_uri() . $path;
+	}
+
+	/**
+   * Minify options field CSS
+   *
+   * @param string $option Option filed ID
+   * @return css
+   */
+  function getOptionCss( $option )
+  {
+    $css = get_option( $option );
+		// Remove comments
+		$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css);
+		// Remove space after colons
+		$buffer = str_replace(': ', ':', $buffer);
+		// Remove whitespace
+		$buffer = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $buffer);
+    return wp_filter_nohtml_kses( $buffer );
+  }
+
+	function postsPagination()
+	{
+		global $wp_query;
+
+		if ( $wp_query->max_num_pages > 1 ) :
+			?>
+			<nav class="posts-pagination mb-6 mb-lg-12">
+				<div class="container">
+					<div class="d-flex justify-content-md-center align-items-center <?php echo ( get_previous_posts_link() ) ? 'justify-content-between' : 'justify-content-end'; ?>">
+						<?php echo get_previous_posts_link( '<span class="pagination-previous-link">PREVIOUS</span>' ); ?>
+						<div class="text-center d-none d-md-flex justify-content-md-center">
+							<?php
+							echo paginate_links(
+								array(
+									'prev_next' => false
+								)
+							);
+							?>
+						</div>
+						<?php echo get_next_posts_link( '<span class="pagination-next-link">NEXT</span>' ); ?>
+					</div>
+				</div>
+			</nav>
+			<?php
+		endif;
 	}
 }

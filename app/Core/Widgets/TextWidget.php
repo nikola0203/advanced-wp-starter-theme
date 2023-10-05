@@ -1,6 +1,6 @@
 <?php
 
-namespace Awpt\Api\Widgets;
+namespace Awpt\Core\Widgets;
 
 use WP_Widget;
 
