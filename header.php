@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package awpt
+ * @package seo_one_click_theme
  */
 
 ?>
@@ -15,6 +15,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-site-verification" content="RolDCkBPQ6-rmFCpJ-GlRs1v64NM3I8oSN5ZOfVyUOw" />
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -23,39 +24,30 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'awpt' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'seo_one_click_theme' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<header id="masthead" class="site-header fixed-top">
+		<nav id="site-navigation" role="navigation" class="container d-xl-flex align-items-xl-center">
+			<div class="nav-logo-btn-wrapper d-flex align-items-center">
+				<?php Awpt\Custom\Custom::site_logo(); ?>
+				<div class="navtoggle relative d-flex justify-content-end align-items-center d-xl-none">
+					<div class="navtoggle__icon"></div>
+				</div>
+			</div>
+			<div class="ms-xl-auto">
 				<?php
-			else :
+				if ( has_nav_menu( 'primary' ) ) :
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'primary',
+							'menu_id'         => 'primary-menu',
+							'menu_class'      => 'menu d-xl-flex align-items-xl-center ps-0',
+							'container_id'    => 'primary-menu-container',
+							'container_class' => 'ms-xl-auto',
+						)
+					);
+				endif;
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$awpt_description = get_bloginfo( 'description', 'display' );
-			if ( $awpt_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $awpt_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<?php
-			if ( has_nav_menu( 'primary' ) ) :
-				wp_nav_menu(
-					array(
-						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
-						'walker'         => new Awpt\Core\WalkerNav(),
-					)
-				);
-			endif;
-			?>
+			</div>
 		</nav>
 	</header><!-- #masthead -->

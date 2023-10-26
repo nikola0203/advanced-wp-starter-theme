@@ -1,0 +1,44 @@
+form {
+  font-family: $headings-font-family;
+  input,
+  select,
+  optgroup,
+  textarea {
+    // font-weight: 500;
+    width: 100%;
+    // font-weight: 300;
+    transition: border $time $ease;
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+}
+
+// textarea {
+//   display: block;
+// }
+
+input,
+select,
+optgroup,
+textarea {
+  @include font-size(14px);
+  line-height: 1;
+  @include padding(16px);
+  border: 1px solid $gray-400;
+  border-radius: 6px;
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  color: $body-color;
+  @include padding(15px 16px);
+  background-color: $white;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  transition: none;
+}

@@ -1,0 +1,53 @@
+a,
+button {
+  // font-family: $headings-font-family;
+  font-weight: 600;
+  // color: $primary;
+  @include transition(color $time $ease);
+
+  svg {
+    @include transition(fill $time $ease, transform $time $ease);
+    // path {
+    //   @include transition(stroke $time $ease, fill $time $ease);
+    // }
+  }
+}
+
+a {
+  &.txt-primary {
+    &:hover,
+    &:focus {
+      color: $secondary;
+      svg {
+        fill: $secondary;
+      }
+    }
+  }
+}
+
+a {
+  &.txt-secondary {
+    &:hover,
+    &:focus {
+      color: $primary;
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+}
+
+.hover-text-primary {
+  transition: color $time $ease;
+  > * {
+    transition: color $time $ease;
+  }
+
+  &:hover,
+  &:focus {
+    color: $primary;
+    > * {
+      color: $primary;
+    }
+  }
+}

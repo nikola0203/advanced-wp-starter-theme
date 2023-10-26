@@ -1,73 +1,22 @@
-@each $pd, $padding in $paddings {
-	@for $i from 0 through $spacing {
-		.#{$pd}-#{$i} {
-			#{$padding}: $gutter * $i;
-		}
-	}
-
-	@for $i from 0 through $spacing {
-		@media (max-width: #{$md}) {
-
-			.#{$pd}-md-#{$i} {
-				#{$padding}: $gutter * $i;
-			}
-		}
-	}
-
-	@for $i from 0 through $spacing {
-		@media (max-width: #{$sm}) {
-
-			.#{$pd}-sm-#{$i} {
-				#{$padding}: $gutter * $i;
-			}
-		}
-	}
+body {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@for $i from 0 through $spacing {
-	.p-#{$i} {
-		padding: $gutter * $i;
-	}
-
-	.m-#{$i} {
-		margin: $gutter * $i;
-	}
+hr {
+  width: 100%;
+	// max-width: 100px;
+  // border-top: 2px solid $gray-200;
+  opacity: 1;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-@each $mg, $margin in $margins {
-	@for $i from 0 through $spacing {
-		.#{$mg}-#{$i} {
-			#{$margin}: $gutter * $i;
-		}
-
-		.#{$mg}-n-#{$i} {
-			#{$margin}: -$gutter * $i;
-		}
-	}
-
-	@for $i from 0 through $spacing {
-		@media (max-width: #{$md}) {
-
-			.#{$mg}-md-#{$i} {
-				#{$margin}: $gutter * $i;
-			}
-
-			.#{$mg}-md-n-#{$i} {
-				#{$margin}: -$gutter * $i;
-			}
-		}
-	}
-
-	@for $i from 0 through $spacing {
-		@media (max-width: #{$sm}) {
-
-			.#{$mg}-sm-#{$i} {
-				#{$margin}: $gutter * $i;
-			}
-
-			.#{$mg}-sm-n-#{$i} {
-				#{$margin}: -$gutter * $i;
-			}
-		}
-	}
+.subtitle-line {
+  hr {
+    display: block;
+    height: 2px;
+    background-color: $primary;
+  }
 }

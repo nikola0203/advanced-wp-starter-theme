@@ -1,0 +1,105 @@
+// h1,
+// .h1,
+// h2,
+// .h2,
+// h3,
+// .h3,
+// h4,
+// .h4,
+// h5,
+// .h5,
+// h6,
+// .h6 {
+  // text-transform: uppercase;
+// color: $primary;
+// font-weight: bold;
+// }
+
+// h1,
+// .h1 {
+//   // @include font-size(56px);
+//   @include margin-bottom(20px);
+// }
+
+// h2,
+// .h2 {
+//   @include margin-bottom(16px);
+// }
+
+// h3,
+// .h3,
+// h4,
+// .h4,
+// h5,
+// .h5,
+// h6,
+// .h6 {
+//   @include margin-bottom(20px);
+// }
+
+// .section-title.section-title-line {
+//   position: relative;
+//   &.text-center {
+//     &::after {
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+//   }
+//   &::after {
+//     content: "";
+//     display: block;
+//     @include margin-top(24px);
+//     height: 6px;
+//     max-width: 216px;
+//     background-color: $green;
+//   }
+// }
+
+// .top-line {
+// 	&::before {
+// 		content: "";
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		height: 2px;
+// 		width: 100%;
+// 		max-width: 100px;
+// 		background-color: $gray-200;
+// 	}
+// 	&-center {
+// 		&::before {
+// 			left: 50%;
+// 			transform: translateX(-50%);
+// 		}
+// 	}
+// }
+
+body {
+  &.page-template-default,
+  &.post-template-default {
+    article.post,
+    article.page {
+      .entry-content {
+        @include font-size(24px);
+        p {
+          @include margin-bottom(30px);
+        }
+      }
+    }
+  }
+  // 	&:not(.single-post):not(.single-page) {
+  // 		h2,
+  // 		.h2 {
+  // 			@include font-size(32px);
+  // 		}
+
+  // 		h3,
+  // 		.h3 {
+  // 			@include font-size(20px);
+  // 		}
+  // 	}
+}
+
+// p {
+// 	font-weight: 600;
+// }

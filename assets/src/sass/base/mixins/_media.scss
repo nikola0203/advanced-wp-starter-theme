@@ -1,0 +1,17 @@
+@mixin bg-cover() {
+	background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin bg-contain() {
+	background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@mixin object-fit( $value: cover ) {
+	height: 100%;
+	width: 100%;
+	object-fit: $value;
+}

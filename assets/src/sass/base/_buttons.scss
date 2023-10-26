@@ -1,0 +1,324 @@
+button {
+  border: 0;
+}
+
+.btn {
+  display: inline-block;
+  @include padding(21px 50px);
+  @include font-size(24px);
+  border-radius: 40px;
+}
+
+.wpforms-submit,
+.btn,
+.btn-menu > a {
+  // display: flex;
+  // justify-content: center;
+  // font-family: $headings-font-family;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $white;
+  text-align: center;
+  background-color: $primary;
+  border: 2px solid transparent;
+  // box-shadow: 1px 1px 6px rgba($black, 0.25);
+  cursor: pointer;
+  @include transition(
+    color $time $ease,
+    background-color $time $ease,
+    border $time $ease
+  );
+
+  .icon-btn {
+    margin-left: 5px;
+    svg {
+      vertical-align: top;
+      path {
+        @include transition(fill $time $ease);
+      }
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: darken($primary, 5%);
+    // border: none;
+  }
+
+  &.btn-white {
+    color: $black;
+    border: 1px solid $gray-200;
+    background-color: $white;
+    svg {
+      path {
+        transition: fill $time $ease;
+      }
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      background-color: $primary;
+      // .icon-btn {
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      // }
+    }
+  }
+  &.btn-big {
+    // @include padding(12px 70px);
+    min-width: 244px;
+  }
+  &.btn-red {
+    background-color: $red;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      background-color: darken($red, 10%);
+    }
+  }
+  &.btn-cyan {
+    background-color: $cyan;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $black;
+      border: 2px solid $cyan;
+      background-color: $secondary;
+    }
+  }
+  &.btn-primary {
+    color: $white;
+    border: 2px solid $black;
+    background-color: $primary;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $primary;
+      background-color: $cyan;
+      border: none;
+    }
+  }
+  &.btn-secondary {
+    background-color: $blue-600;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+      // border: 2px solid $secondary;
+      background-color: $blue-700;
+    }
+  }
+  &.btn-transparent {
+    color: $primary;
+    background-color: transparent;
+    border: 2px solid $primary;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      background-color: $primary;
+      svg {
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+  &.btn-small {
+    @include font-size(16px);
+    @include padding(15px 40px);
+  }
+
+  // &.btn-medium {
+  //   @include font-size(16px);
+  //   @include padding(17.5px 20px);
+  // }
+}
+
+.btn-menu {
+  > a {
+    display: flex;
+    @include font-size(14px);
+    @include padding(12px 35px);
+    // @include padding(19px 24px);
+    transition: min-height $time $ease, background-color $time $ease, color $time $ease;;
+    @include media-breakpoint-down(xl) {
+      display: block;
+    }
+    @include media-breakpoint-up(xl) {
+      align-items: center;
+      min-height: 110px;
+    }
+  }
+  &.btn-menu-transparent {
+    > a {
+      color: $secondary;
+      background-color: transparent;
+      &:hover,
+      &:focus {
+        color: $white;
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+nav.scroll-active {
+  .btn-menu {
+    > a {
+      min-height: 70px;
+    }
+  }
+}
+
+.btn-close {
+  right: 20px;
+  top: 20px;
+  &:hover,
+  &:focus,
+  &:active {
+    path {
+      stroke: $secondary;
+    }
+  }
+}
+
+// Mobile nav-menu toggle
+.navtoggle {
+  // display: none;
+  @include media-breakpoint-down(xl) {
+    // position: relative;
+    // display: flex;
+    // justify-content: end;
+    // align-items: center;
+    height: 50px;
+    width: 60px;
+    z-index: 2;
+    // background: $secondary;
+    // cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    // @include border-radius(16px);
+
+    &__icon {
+      position: relative;
+      height: 2px;
+      width: 40px;
+      background: $white;
+      transform: scale(0.7);
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: $white;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: $white;
+      }
+    }
+
+    &__icon,
+    &__icon:before,
+    &__icon:after {
+      will-change: transform;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &--active {
+      .navtoggle__icon {
+        transform: scale(0.7) rotate(90deg);
+        &:before {
+          transform: rotate(-45deg) translate(-7px, -7px) scaleX(0.7);
+        }
+
+        &:after {
+          transform: rotate(45deg) translate(-7px, 7px) scaleX(0.7);
+        }
+      }
+    }
+  }
+}
+
+.wp-block-button.has-medium-font-size {
+  @include font-size(16px);
+  a.wp-block-button__link {
+    @include padding(20px 40px);
+    line-height: 1;
+    transition: background-color 300ms ease;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    a {
+      background-color: darken($primary, 5%) !important;
+    }
+  }
+}
+// wp-block-button__link has-white-color has-text-color has-background has-text-align-center wp-element-button
+
+.wpforms-submit {
+  @include font-size(16px);
+  border-radius: 6px;
+  width: 100%;
+  @include padding(25px);
+}
+
+.section-newsletter {
+  @include media-breakpoint-down(md) {
+    input[type="email"] {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    input[type="submit"] {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    input[type="email"] {
+      flex-basis: 76%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    input[type="submit"] {
+      flex-basis: 24%;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+// .btn-group-pricing-plans {
+//   button.btn {
+//     &.active {
+//       color: $white;
+//       background-color: $secondary;
+//     }
+//   }
+//   .btn-pricing-plan-monthly {
+//     border-top-right-radius: 0;
+//     border-bottom-right-radius: 0;
+//   }
+//   .btn-pricing-plan-annual {
+//     border-top-left-radius: 0;
+//     border-bottom-left-radius: 0;
+//   }
+// }

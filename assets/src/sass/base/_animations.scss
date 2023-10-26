@@ -1,11 +1,23 @@
 @include keyframes(animationName) {
 	0% {
 		// declaration
-
 	}
 
 	100% {
 		// declaration
+	}
+}
 
+.lazy-fade {
+	animation-name: lazy-fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes lazy-fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }

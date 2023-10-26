@@ -1,0 +1,182 @@
+// Position
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.font-family-headings {
+  font-family: $headings-font-family;
+}
+
+.font-family-base {
+  font-family: $font-family-base;
+}
+
+// Aligment
+.txt-center {
+  text-align: center;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+// Images
+.bg-cover {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-contain {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.object-fit-cover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.object-fit-contain {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+// Overlays
+.section-overlay {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.3);
+  }
+  &-rounded {
+    &::before {
+      border-radius: 10px;
+    }
+  }
+  &-dark {
+    &::before {
+      background-color: rgba($black, 0.75);
+    }
+  }
+}
+
+// Colors
+.txt-white {
+  color: $white;
+}
+
+.txt-black {
+  color: $black;
+}
+
+.txt-primary {
+  color: $primary;
+}
+
+.txt-secondary {
+  color: $secondary;
+}
+
+.text-orange {
+  color: $orange-300;
+}
+
+.txt-cyan {
+  color: $cyan;
+}
+
+.text-smaller {
+  font-size: 14px !important;
+}
+
+.text-small {
+  @include font-size(16px !important);
+}
+
+.text-medium {
+  @include font-size(18px !important);
+}
+
+.text-big {
+  @include font-size(20px !important);
+}
+
+.text-larger {
+  @include font-size(22px !important);
+}
+
+.text-huge {
+  @include font-size(24px !important);
+}
+
+.container-wide {
+  max-width: 1920px;
+}
+
+.text-green {
+  color: $green;
+}
+
+.text-gray-200 {
+  color: $gray-200;
+}
+
+.text-gray-600 {
+  color: $gray-600;
+}
+
+.text-black-100 {
+  color: $black-100;
+}
+
+.text-blue-600 {
+  color: $blue-600;
+}
+
+.text-blue-700 {
+  color: $blue-700;
+}
+
+.txt-transform-none {
+  text-transform: none !important;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.bg-gray-200 {
+  background-color: $gray-200;
+}
+
+.bg-gray-300 {
+  background-color: $gray-300;
+}
+
+.margin-last-none {
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

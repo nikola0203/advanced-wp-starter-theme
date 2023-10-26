@@ -1,0 +1,93 @@
+ul,
+ol {
+  @include padding-left(35px);
+}
+
+ul:not(.menu),
+ol {
+  @include margin-bottom(20px);
+  li {
+    &::marker {
+      color: $secondary;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+body {
+  &.page-template-default,
+  &.post-template-default {
+    article.post,
+    article.page {
+      .entry-content {
+        ul:not(.menu),
+        ol {
+          li {
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+        b,
+        strong {
+          color: $primary;
+        }
+      }
+      @include media-breakpoint-down(lg) {
+        .entry-content {
+          ul:not(.menu),
+          ol {
+            li {
+              @include margin-bottom(15px);
+            }
+          }
+        }
+      }
+      @include media-breakpoint-up(lg) {
+        .entry-content {
+          ul:not(.menu),
+          ol {
+            li {
+              @include margin-bottom(20px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ul.list-checkmark,
+ol.list-checkmark {
+  li {
+    @include font-size(20px);
+    @include padding-left(10px);
+    @include margin-bottom(24px);
+    text-transform: uppercase;
+    font-weight: 900;
+    display: flex;
+    position: relative;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: -24px;
+      top: 3px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      background-image: url("../img/icon-checkmark-v2.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 24px;
+      width: 24px;
+      color: $secondary;
+    }
+  }
+}
+

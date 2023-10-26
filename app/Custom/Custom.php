@@ -51,6 +51,10 @@ class Custom
    */
   public static function site_logo()
   {
+    if ( ! class_exists('ACF') ) {
+      return false;
+    }
+
     $headerSettings = get_field( 'header_settings', 'option' );
     if ( ! empty( $headerSettings['site_logo'] ) ) {
       ?>

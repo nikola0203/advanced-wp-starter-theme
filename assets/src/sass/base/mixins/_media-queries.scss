@@ -1,0 +1,53 @@
+// Media query mixins
+@mixin r( $point ) {
+	@if $point == 'max-small' {
+		@media ( max-width: 576px ) {
+			@content;
+		}
+	}
+	@if $point == 576 or $point == 'small' {
+		@media ( min-width: 576px ) {
+			@content;
+		}
+	}
+	@if $point == 767 or $point == 'max-medium' {
+		@media ( max-width: 767px ) {
+			@content;
+		}
+	}
+	@if $point == 768 or $point == 'medium' {
+		@media ( min-width: 768px ) {
+			@content;
+		}
+	}
+	@if $point == 991 or $point == 'max-large' {
+		@media ( max-width: 991px ) {
+			@content;
+		}
+	}
+	@if $point == 992 or $point == 'large' {
+		@media ( min-width: 992px ) {
+			@content;
+		}
+	}
+	@if $point == 1199 or $point == 'max-extra-large' {
+		@media ( max-width: 1199px ) {
+			@content;
+		}
+	}
+	@if $point == 1200 or $point == 'extra-large' {
+		@media ( min-width: 1200px ) {
+			@content;
+		}
+	}
+  @if $point == 1599 or $point == 'max-extra-extra-large' {
+		@media ( max-width: 1199px ) {
+			@content;
+		}
+	}
+	@if $point == 1600 or $point == 'extra-extra-large' {
+		@media ( min-width: 1400px ) {
+			@content;
+		}
+	}
+}

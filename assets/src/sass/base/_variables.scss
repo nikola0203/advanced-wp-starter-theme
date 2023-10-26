@@ -1,54 +1,310 @@
 /*-------------------------
-*  Grid
+*  Bootstrap
 *--------------------------*/
-$columns: 12;
-$gutter: 10px;
-$spacing: 20;
+
+// Color system
+$primary: #915447;
+$secondary: #192E40;
+$red: #E92E2C;
+$green: #7cd926;
+$orange: #EB8137;
+$yellow: #F3A836;
+
+$black-100: #151a1f;
+
+// scss-docs-start gray-color-variables
+$white: #fff !default;
+$gray-100: #F5F5F5;
+// $gray-200: #e9ecef !default;
+// $gray-300: #dee2e6 !default;
+// $gray-400: #ced4da !default;
+// $gray-500: #adb5bd !default;
+// $gray-600: #6c757d !default;
+// $gray-700: #495057 !default;
+// $gray-800: #343a40 !default;
+// $gray-900: #212529 !default;
+// $black:    #000 !default;
+// scss-docs-end gray-color-variables
+
+$pink-100: #fbf7f8;
+// $pink-200: tint-color($pink, 60%) !default;
+// $pink-300: tint-color($pink, 40%) !default;
+// $pink-400: tint-color($pink, 20%) !default;
+// $pink-500: $pink !default;
+// $pink-600: shade-color($pink, 20%) !default;
+// $pink-700: shade-color($pink, 40%) !default;
+// $pink-800: shade-color($pink, 60%) !default;
+// $pink-900: shade-color($pink, 80%) !default;
+
+$yellow-100: #B5B4AC;
+$yellow-200: #858480;
+$yellow-300: #E3E3DE;
+// $yellow-200: tint-color($yellow, 60%) !default;
+// $yellow-300: tint-color($yellow, 40%) !default;
+// $yellow-400: tint-color($yellow, 20%) !default;
+// $yellow-500: $yellow !default;
+// $yellow-600: shade-color($yellow, 20%) !default;
+// $yellow-700: shade-color($yellow, 40%) !default;
+// $yellow-800: shade-color($yellow, 60%) !default;
+// $yellow-900: shade-color($yellow, 80%) !default;
+
+// scss-docs-start gray-color-variables
+// $white:    #fff !default;
+// $gray-100: #f7f7f7;
+$gray-200: #F4F4F4;
+$gray-300: #EAEAEA;
+// $gray-400: #ced4da !default;
+$gray-500: #ebf0f4;
+$gray-600: #666666;
+// $gray-700: #495057 !default;
+$gray-800: #313336 !default;
+// $gray-900: #212529 !default;
+// $black:    #000 !default;
+// scss-docs-end gray-color-variables
+
+$blue-200: #eaf0f5;
+$blue-600: #4591e1;
+$blue-700: #2270c3;
+$blue-800: #174f8b;
+
+// $green-100: tint-color($green, 80%) !default;
+// $green-200: tint-color($green, 60%) !default;
+$green-300: #b5fa76;
+// $green-400: tint-color($green, 20%) !default;
+// $green-500: $green !default;
+// $green-600: shade-color($green, 20%) !default;
+// $green-700: shade-color($green, 40%) !default;
+// $green-800: shade-color($green, 60%) !default;
+// $green-900: shade-color($green, 80%) !default;
+
+// $orange-100: tint-color($orange, 80%) !default;
+// $orange-200: tint-color($orange, 60%) !default;
+$orange-300: #6E5854;
+// $orange-400: tint-color($orange, 20%) !default;
+// $orange-500: $orange !default;
+// $orange-600: shade-color($orange, 20%) !default;
+// $orange-700: shade-color($orange, 40%) !default;
+// $orange-800: shade-color($orange, 60%) !default;
+// $orange-900: shade-color($orange, 80%) !default;
+
+// scss-docs-start theme-color-variables
+// $primary:       $blue !default;
+// $secondary:     $gray-600 !default;
+$success: $green !default;
+$info: $blue-700 !default;
+// $warning:       $yellow !default;
+// $danger:        $red !default;
+$light: $gray-500;
+$dark: $gray-800 !default;
+// scss-docs-end theme-color-variables
+
+// $red-100: tint-color($red, 80%) !default;
+// $red-200: tint-color($red, 60%) !default;
+// $red-300: tint-color($red, 40%) !default;
+// $red-400: tint-color($red, 20%) !default;
+// $red-500: $red !default;
+$red-600: #E23735;
+// $red-700: shade-color($red, 40%) !default;
+// $red-800: shade-color($red, 60%) !default;
+// $red-900: shade-color($red, 80%) !default;
+
+// Navs
+
+// scss-docs-start nav-variables
+// $nav-link-padding-y:                .5rem !default;
+// $nav-link-padding-x:                1rem !default;
+// $nav-link-font-size:                null !default;
+// $nav-link-font-weight:              null !default;
+// $nav-link-color:                    var(--#{$prefix}link-color) !default;
+// $nav-link-hover-color:              var(--#{$prefix}link-hover-color) !default;
+// $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+// $nav-link-disabled-color:           $gray-600 !default;
+
+// $nav-tabs-border-color:             $gray-300 !default;
+// $nav-tabs-border-width:             $border-width !default;
+// $nav-tabs-border-radius:            $border-radius !default;
+// $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;
+// $nav-tabs-link-active-color:        $gray-700 !default;
+$nav-tabs-link-active-bg: transparent;
+// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
+
+// $nav-pills-border-radius:           $border-radius !default;
+// $nav-pills-link-active-color:       $component-active-color !default;
+// $nav-pills-link-active-bg:          $component-active-bg !default;
+// scss-docs-end nav-variables
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-negative-margins: true;
+
+// scss-docs-start spacer-variables-maps
+$spacer: 0.625rem;
+$spacers: (
+  0: 0,
+  1: calc($spacer / 2),
+  2: $spacer,
+  3: calc($spacer * 0.5),
+  4: calc($spacer * 1),
+  5: calc($spacer * 1.5),
+  6: calc($spacer * 2),
+  7: calc($spacer * 2.5),
+  8: calc($spacer * 3),
+  9: calc($spacer * 3.5),
+  10: calc($spacer * 4),
+  11: calc($spacer * 4.5),
+  12: calc($spacer * 5),
+  13: calc($spacer * 5.5),
+  14: calc($spacer * 6),
+  15: calc($spacer * 6.5),
+  16: calc($spacer * 7),
+  17: calc($spacer * 7.5),
+  18: calc($spacer * 8),
+  19: calc($spacer * 8.5),
+  20: calc($spacer * 9),
+  21: calc($spacer * 9.5),
+  22: calc($spacer * 10),
+  23: calc($spacer * 10.5),
+  24: calc($spacer * 11),
+  25: calc($spacer * 11.5),
+  26: calc($spacer * 12),
+  27: calc($spacer * 12.5),
+  28: calc($spacer * 13),
+  29: calc($spacer * 13.5),
+  30: calc($spacer * 14)
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 975px,
+  xl: 1255px,
+  xxl: 1435px
+) !default;
+//1294
+
+// scss-docs-end container-max-widths
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-base: "Sora", sans-serif;
+// $font-family-secondary: "Mulish", sans-serif;
+// $font-size-base: 1.125rem;
+$font-weight-base: 300;
+
+// scss-docs-start headings-variables
+$headings-margin-bottom: $spacer * 1.5;
+$headings-font-family: "Ranade-Variable", serif;
+// $headings-font-style:         null !default;
+$headings-font-weight: 400;
+// $headings-line-height:        1.2 !default;
+$headings-color: $gray-800;
+// scss-docs-end headings-variables
+
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-color: #3E4A5C;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $primary;
+$link-decoration: none;
+// $link-shade-percentage:                   20% !default;
+$link-hover-color: $secondary;
+// $link-hover-decoration:                   null !default;
+
+// $stretched-link-pseudo-element:           after !default;
+// $stretched-link-z-index:                  1 !default;
+
+// Paragraphs
+//
+// Style p element.
+$paragraph-margin-bottom: 1.25rem;
+
+// scss-docs-start box-shadow-variables
+$box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+// $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
+// $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+// $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
+// scss-docs-end box-shadow-variables
+
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+// $font-size-base affects the font size of the body text
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+
+$h1-font-size: $font-size-base * 2.875; // 48px
+$h2-font-size: $font-size-base * 2.625; // 42px
+$h3-font-size: $font-size-base * 2; // 32px
+$h4-font-size: $font-size-base * 1.5; // 24px
+$h5-font-size: $font-size-base * 1.25; // 20px
+$h6-font-size: $font-size-base * 1.125; // 18px
+// scss-docs-end font-variables
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+// scss-docs-start border-variables
+$border-width: 1px !default;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+) !default;
+
+// $border-style:                solid !default;
+$border-color: $yellow-100;
+// $border-color-translucent:    rgba($black, .175) !default;
+// scss-docs-end border-variables
+
+// scss-docs-start border-radius-variables
+// $border-radius:               .375rem !default;
+// $border-radius-sm:            .25rem !default;
+// $border-radius-lg:            .5rem !default;
+$border-radius-xl:            0.625rem;
+// $border-radius-2xl:           2rem !default;
+// $border-radius-pill:          50rem !default;
+// scss-docs-end border-radius-variables
 
 /*-------------------------
-*  Spacing
+*  Modal
 *--------------------------*/
-$paddings: ('pt': 'padding-top', 'pr': 'padding-right', 'pb': 'padding-bottom', 'pl': 'padding-left');
-$margins: ('mt': 'margin-top', 'mr': 'margin-right', 'mb': 'margin-bottom', 'ml': 'margin-left');
+$modal-backdrop-bg: $white;
+$modal-backdrop-opacity: 0.5;
 
 /*-------------------------
-*  Media Queries
-*--------------------------*/
-$xs: 480px;
-$sm: 600px;
-$md: 800px;
-$lg: 1190px;
-$xl: 1440px;
-$xxl: 1700px;
-
-$breakpoints: ('xs': $xs, 'sm': $sm, 'md': $md, 'lg': $lg, 'xl': $xl);
-
-/*-------------------------
-*  Colours
-*--------------------------*/
-$white: #fff;
-$black: #000;
-$light-grey: #f0f0f0;
-
-// custom colours
-
-$colours: ('white': $white, 'black': $black, 'light-grey': $light-grey);
-
-/*-------------------------
-*  Typography
-*--------------------------*/
-$base-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-$base-fs: 18px;
-
-/*-------------------------
-*  Animations
+*  Custom
 *--------------------------*/
 $time: 320ms;
-$time_slow: 700ms;
-
-$swing: cubic-bezier(0.55, 0, 0.1, 1);
-$swift: cubic-bezier(0.4, 0, 0.2, 1);
 $ease: ease;
 
+// Animations
 $transition-default: all $time $ease;
+
+:root {
+  // --swiper-navigation-top-offset: 30%;
+  --swiper-navigation-color: #B5B4AC;
+  --swiper-theme-color: #B5B4AC;
+  --swiper-pagination-color: #915447;
+  --swiper-pagination-bullet-inactive-color: transparent;
+  --swiper-pagination-bullet-width: 11px;
+  --swiper-pagination-bullet-height: 11px;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
